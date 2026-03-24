@@ -1,11 +1,13 @@
+//Zainab Dar 801462977
+//Mariam Muhammad 801415977
+//Minna Abunura 
+
 using ITCS_3112_Lab_2_Recommendation.Contracts;
 using ITCS_3112_Lab_2_Recommendation.Domain;
 using ITCS_3112_Lab_2_Recommendation.Repositories;
 using ITCS_3112_Lab_2_Recommendation.Services;
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  Dependency wiring (manual DI – no container needed for this scope)
-// ─────────────────────────────────────────────────────────────────────────────
+//  Dependency wiring
 IBookRepository   bookRepo   = new BookRepository();
 IRatingRepository ratingRepo = new RatingRepository();
 IMemberRepository memberRepo = new MemberRepository();
@@ -13,9 +15,7 @@ IAuthService      authSvc    = new AuthService(memberRepo);
 IRecommendationService recSvc =
     new RecommendationService(memberRepo, bookRepo, ratingRepo);
 
-// ─────────────────────────────────────────────────────────────────────────────
 //  File loading
-// ─────────────────────────────────────────────────────────────────────────────
 Console.WriteLine("=================================================");
 Console.WriteLine("   📚  Book Recommendation System  📚");
 Console.WriteLine("=================================================\n");
@@ -30,26 +30,24 @@ try
 {
     // Books must be loaded before ratings (ratings reference book positions)
     bookRepo.LoadFromFile(booksPath);
-    Console.WriteLine($"  ✅  Loaded {bookRepo.GetAll().Count} books.");
+    Console.WriteLine($"   Loaded {bookRepo.GetAll().Count} books.");
 
     memberRepo.LoadFromFile(ratingsPath, ratingRepo, bookRepo);
-    Console.WriteLine($"  ✅  Loaded {memberRepo.GetAll().Count} members and {ratingRepo.GetAll().Count} ratings.\n");
+    Console.WriteLine($"   Loaded {memberRepo.GetAll().Count} members and {ratingRepo.GetAll().Count} ratings.\n");
 }
 catch (FileNotFoundException ex)
 {
-    Console.WriteLine($"\n  ❌  {ex.Message}");
+    Console.WriteLine($"\n  {ex.Message}");
     Console.WriteLine("  Please ensure both files exist and re-run the program.\n");
     return;
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"\n  ❌  Unexpected error during file loading: {ex.Message}");
+    Console.WriteLine($"\n  Unexpected error during file loading: {ex.Message}");
     return;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 //  Main menu loop
-// ─────────────────────────────────────────────────────────────────────────────
 bool running = true;
 while (running)
 {
@@ -93,7 +91,7 @@ while (running)
             case "2": HandleAddMember(); break;
             case "3": HandleViewBooks(); break;
             case "0": running = false; break;
-            default:  Console.WriteLine("  ⚠️  Invalid choice."); break;
+            default:  Console.WriteLine(" Invalid choice."); break;
         }
     }
     else
@@ -108,17 +106,15 @@ while (running)
             case "6": HandleViewRatings();      break;
             case "7": HandleRecommendations();  break;
             case "0": running = false;          break;
-            default:  Console.WriteLine("  ⚠️  Invalid choice."); break;
+            default:  Console.WriteLine(" ️  Invalid choice."); break;
         }
     }
 }
 
-Console.WriteLine("\nGoodbye! Happy reading! 📖\n");
+Console.WriteLine("\nGoodbye! Happy reading! \n");
 return;
 
-// ─────────────────────────────────────────────────────────────────────────────
 //  Handler methods
-// ─────────────────────────────────────────────────────────────────────────────
 
 void HandleLogin()
 {
@@ -126,16 +122,16 @@ void HandleLogin()
     string name = Console.ReadLine()?.Trim() ?? "";
 
     if (authSvc.Login(name))
-        Console.WriteLine($"  ✅  Welcome back, {authSvc.CurrentMember!.Name}!");
+        Console.WriteLine($"   Welcome back, {authSvc.CurrentMember!.Name}!");
     else
-        Console.WriteLine($"  ❌  No member found with name '{name}'. Please add yourself first.");
+        Console.WriteLine($"   No member found with name '{name}'. Please add yourself first.");
 }
 
 void HandleLogout()
 {
     string name = authSvc.CurrentMember!.Name;
     authSvc.Logout();
-    Console.WriteLine($"  ✅  {name} has been logged out.");
+    Console.WriteLine($"   {name} has been logged out.");
 }
 
 void HandleAddMember()
@@ -145,13 +141,13 @@ void HandleAddMember()
 
     if (string.IsNullOrWhiteSpace(name))
     {
-        Console.WriteLine("  ⚠️  Name cannot be empty.");
+        Console.WriteLine(" ️  Name cannot be empty.");
         return;
     }
 
     var newMember = new Member(name);
     memberRepo.Add(newMember);
-    Console.WriteLine($"  ✅  Member added: {newMember}");
+    Console.WriteLine($"   Member added: {newMember}");
 }
 
 void HandleAddBook()
@@ -167,13 +163,13 @@ void HandleAddBook()
 
     if (string.IsNullOrWhiteSpace(author) || string.IsNullOrWhiteSpace(title))
     {
-        Console.WriteLine("  ⚠️  Author and title are required.");
+        Console.WriteLine(" ️  Author and title are required.");
         return;
     }
 
     var newBook = new Book(author, title, year);
     bookRepo.Add(newBook);
-    Console.WriteLine($"  ✅  Book added: {newBook}");
+    Console.WriteLine($"   Book added: {newBook}");
 }
 
 void HandleViewBooks()
@@ -205,14 +201,14 @@ void HandleRateBook()
 
     if (!int.TryParse(Console.ReadLine()?.Trim(), out int isbn))
     {
-        Console.WriteLine("  ⚠️  Invalid ISBN.");
+        Console.WriteLine(" ️  Invalid ISBN.");
         return;
     }
 
     var book = bookRepo.GetById(isbn);
     if (book == null)
     {
-        Console.WriteLine("  ⚠️  Book not found.");
+        Console.WriteLine(" ️  Book not found.");
         return;
     }
 
@@ -228,7 +224,7 @@ void HandleRateBook()
 
     if (!int.TryParse(Console.ReadLine()?.Trim(), out int rawRating))
     {
-        Console.WriteLine("  ⚠️  Invalid input.");
+        Console.WriteLine("    Invalid input.");
         return;
     }
 
@@ -245,13 +241,13 @@ void HandleRateBook()
 
     if ((int)rv == 999)
     {
-        Console.WriteLine("  ⚠️  Invalid rating value. Choose from: -5, -3, 0, 1, 3, 5");
+        Console.WriteLine("    Invalid rating value. Choose from: -5, -3, 0, 1, 3, 5");
         return;
     }
 
     var rating = new Rating(book, authSvc.CurrentMember!, rv);
     ratingRepo.AddOrUpdate(rating);
-    Console.WriteLine($"  ✅  Saved: {rating}");
+    Console.WriteLine($"   Saved: {rating}");
 }
 
 void HandleViewRatings()
