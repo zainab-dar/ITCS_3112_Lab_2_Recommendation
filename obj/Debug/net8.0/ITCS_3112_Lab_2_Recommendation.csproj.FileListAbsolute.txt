@@ -1,0 +1,15 @@
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.AssemblyInfoInputs.cache
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.AssemblyInfo.cs
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.csproj.CoreCompileInputs.cache
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.sourcelink.json
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ITCS_3112_Lab_2_Recommendation
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.deps.json
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.runtimeconfig.json
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.dll
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.pdb
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.dll
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/refint/ITCS_3112_Lab_2_Recommendation.dll
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.pdb
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.genruntimeconfig.cache
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ref/ITCS_3112_Lab_2_Recommendation.dll
