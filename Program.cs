@@ -30,6 +30,11 @@ try
 {
     // Books must be loaded before ratings (ratings reference book positions)
     bookRepo.LoadFromFile(booksPath);
+    Console.WriteLine("DEBUG: Books loaded:");
+    foreach (var b in bookRepo.GetAll())
+    {
+        Console.WriteLine($"{b.Title} by {b.Author}");
+    }
     Console.WriteLine($"   Loaded {bookRepo.GetAll().Count} books.");
 
     memberRepo.LoadFromFile(ratingsPath, ratingRepo, bookRepo);

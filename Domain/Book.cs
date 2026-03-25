@@ -8,7 +8,7 @@ public class Book
 {
     private static int _nextIsbn = 1001;
 
-    public int ISBN { get; }
+    public int ISBN { get; set; }
     public string Author { get; set; }
     public string Title { get; set; }
     public string Year { get; set; }

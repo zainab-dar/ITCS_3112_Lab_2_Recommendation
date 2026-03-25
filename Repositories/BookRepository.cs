@@ -29,29 +29,30 @@ public class BookRepository : IBookRepository
     /// Books are assigned sequential ISBNs starting at 1001.
     /// The file is read only once.
     /// </summary>
-    public void LoadFromFile(string filePath)
+    public void LoadFromFile(string path)
     {
-        if (!File.Exists(filePath))
-            throw new FileNotFoundException($"Books file not found: {filePath}");
+        if (!File.Exists(path))
+            throw new FileNotFoundException($"Books file not found: {path}");
 
-        string[] lines = File.ReadAllLines(filePath);
-        foreach (string line in lines)
+        var lines = File.ReadAllLines(path);
+
+        int isbn = 1;
+
+        foreach (var line in lines)
         {
-            if (string.IsNullOrWhiteSpace(line)) continue;
+            var parts = line.Split(',');
 
-            // Support comma-separated: Author,Title,Year
-            string[] parts = line.Split(',');
-            if (parts.Length < 3)
-            {
-                Console.WriteLine($"  [WARN] Skipping malformed book line: {line}");
-                continue;
-            }
+            if (parts.Length < 3) continue;
 
             string author = parts[0].Trim();
-            string title  = parts[1].Trim();
-            string year   = parts[2].Trim();
+            string title = parts[1].Trim();
+            string year = parts[2].Trim();
 
-            _books.Add(new Book(author, title, year));
+            var book = new Book(author, title, year)
+            {
+                ISBN = isbn++
+            };
+            _books.Add(book); // ✅ FIXED
         }
     }
 }
