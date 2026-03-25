@@ -13,3 +13,5 @@
 /Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.pdb
 /Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ITCS_3112_Lab_2_Recommendation.genruntimeconfig.cache
 /Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/obj/Debug/net8.0/ref/ITCS_3112_Lab_2_Recommendation.dll
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/books.txt
+/Users/zainabdar/Documents/ITCS_3112_Lab_2_Recommendation/bin/Debug/net8.0/ratings.txt
