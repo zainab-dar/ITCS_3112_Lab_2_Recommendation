@@ -1,0 +1,10 @@
+J.R.R. Tolkien,The Fellowship of the Ring,1954
+J.R.R. Tolkien,The Two Towers,1954
+J.R.R. Tolkien,The Return of the King,1955
+J.K. Rowling,Harry Potter and the Sorcerer's Stone,1997
+J.K. Rowling,Harry Potter and the Chamber of Secrets,1998
+Frank Herbert,Dune,1965
+George R.R. Martin,A Game of Thrones,1996
+Isaac Asimov,Foundation,1951
+Douglas Adams,The Hitchhiker's Guide to the Galaxy,1979
+Ursula K. Le Guin,The Left Hand of Darkness,1969
