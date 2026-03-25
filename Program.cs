@@ -181,7 +181,7 @@ void HandleViewBooks()
         return;
     }
 
-    Console.WriteLine($"  {'ISBN',-6}  {'Title',-40}  {'Author',-25}  Year");
+    Console.WriteLine($"  {"ISBN",-6}  {"Title",-40}  {"Author",-25}  Year");
     Console.WriteLine(new string('-', 85));
     foreach (var b in books)
         Console.WriteLine($"  {b.ISBN,-6}  {b.Title,-40}  {b.Author,-25}  {b.Year}");
